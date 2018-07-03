@@ -7,10 +7,12 @@
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 
 	<!-- Bootstrap CSS -->
+	<!-- build:css css/main.css -->
 	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="node_modules/font-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="node_modules/bootstrap-social/bootstrap-social.css">
+	<!-- endbuild -->
 	<title>Ristorante FuCheng</title>
 </head>
 
@@ -39,7 +41,7 @@
 					</li>
 				</ul>
 				<span class="navbar-text">
-					<a data-toggle="modal" data-target="#loginModal">
+					<a  id="loginButton">
 						<span class="fa fa-sign-in"></span> Login
 					</a>
 				</span>
@@ -52,7 +54,7 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<h4 class="modal-title">Login</h4>
-					<button type="button" class="close" data-dismiss="modal-header">
+					<button type="button" class="close"  id="closeBtnLogin">
 						&times;
 					</button>
 				</div>
@@ -74,8 +76,9 @@
 									</label>
 								</div>
 							</div>
-						</div>
+						</div> 
 						<div class="form-row">
+
 							<button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
 							<button type="submit" class="btn btn-primary btn-sm ml-1">Sign in</button>        
 						</div>
@@ -95,81 +98,78 @@
 				<div class="col-12 col-sm align-self-center">
 					<img src="src/logo.jpg" style="width:150px;height:100px;" class="img-fluid">
 				</div>
-<!-- 				<div class="col-12 col-sm align-self-center">
-					<a role="button" class="btn btn-sm nav-link btn-block btn-warning" data-toggle="tooltip" data-html="true" title="Or Call us at <br><strong>+647 6335866</strong>" data-placement="bottom"  href="index.html#reserveTable">Reserve Table</a>
-				</div> -->
 				<div class="col-12 col-sm align-self-center">
-					<a role="button" class="btn btn-sm nav-link btn-block btn-warning" data-toggle="modal" data-target="#modalReserve">Reserve Table</a>
+					<a role="button" class="btn btn-sm nav-link btn-block btn-warning" id="reserveButton">Reserve Table</a>
 
 				</div>
 				<div class="modal fade" id="modalReserve" role="dialog">
 					
 
-					<div class="modal-dialog" role="content">
+					<div class="modal-dialog text-body" role="content" >
 						<div class="modal-content">
 							<div class="modal-header">
 								<h4 class="modal-title">Reserve a Table</h4>
-								<button type="button" class="close" data-dismiss="modal-header">
+								<button type="button" class="close" id="reserveCloseBtn" >
 									&times;
 								</button>
 							</div>
 							<div class="modal-body">
-								<div class="container-fluid">
-									<form>
-										<fieldset class="form-group">
-											<div class="row">
-												<legend class="col-form-label col-sm-2 pt-0">Number of Guests </legend>
-												<div class="col-sm-10">
-													<div class="form-check-inline form-check">
-														<input class="form-check-input" type="radio" name="guestNumber" id="gridRadios1" value="1">
-														<label class="form-check-label" for="gridRadios1">
-															1
-														</label>
-													</div>
-													<div class="form-check form-check-inline">
-														<input class="form-check-input" type="radio" name="guestNumber" id="gridRadios2" value="2">
-														<label class="form-check-label" for="gridRadios2">
-															2
-														</label>
-													</div>
-													<div class="form-check-inline form-check">
-														<input class="form-check-input" type="radio" name="guestNumber" id="gridRadios3" value="3">
-														<label class="form-check-label" for="gridRadios3">
-															3
-														</label>
-													</div>
-													<div class="form-check-inline form-check">
-														<input class="form-check-input" type="radio" name="guestNumber" id="gridRadios4" value="4">
-														<label class="form-check-label" for="gridRadios4">
-															4
-														</label>
-													</div>
-													<div class="form-check form-check-inline">
-														<input class="form-check-input" type="radio" name="guestNumber" id="gridRadios5" value="5">
-														<label class="form-check-label" for="gridRadios5">
-															5
-														</label>
-													</div>
-													<div class="form-check-inline form-check">
-														<input class="form-check-input" type="radio" name="guestNumber" id="gridRadios6" value="6">
-														<label class="form-check-label" for="gridRadio6">
-															6
-														</label>
-													</div>
+								
+								<form>
+									<fieldset class="form-group">
+										<div class="row">
+											<legend class="col-form-label col-sm-2 pt-0">Number of Guests </legend>
+											<div class="col-sm-10">
+												<div class="form-check-inline form-check">
+													<input class="form-check-input" type="radio" name="guestNumber" id="gridRadios1" value="1">
+													<label class="form-check-label" for="gridRadios1">
+														1
+													</label>
+												</div>
+												<div class="form-check form-check-inline">
+													<input class="form-check-input" type="radio" name="guestNumber" id="gridRadios2" value="2">
+													<label class="form-check-label" for="gridRadios2">
+														2
+													</label>
+												</div>
+												<div class="form-check-inline form-check">
+													<input class="form-check-input" type="radio" name="guestNumber" id="gridRadios3" value="3">
+													<label class="form-check-label" for="gridRadios3">
+														3
+													</label>
+												</div>
+												<div class="form-check-inline form-check">
+													<input class="form-check-input" type="radio" name="guestNumber" id="gridRadios4" value="4">
+													<label class="form-check-label" for="gridRadios4">
+														4
+													</label>
+												</div>
+												<div class="form-check form-check-inline">
+													<input class="form-check-input" type="radio" name="guestNumber" id="gridRadios5" value="5">
+													<label class="form-check-label" for="gridRadios5">
+														5
+													</label>
+												</div>
+												<div class="form-check-inline form-check">
+													<input class="form-check-input" type="radio" name="guestNumber" id="gridRadios6" value="6">
+													<label class="form-check-label" for="gridRadio6">
+														6
+													</label>
 												</div>
 											</div>
-										</fieldset>
-										<div class="form-group row">
-											<label for="DateAndTime" class="col-12 col-md-3 col-form-label">Date and Time</label>
-											<div class="col-12 col-sm-4">
-												<input type="DateAndTime" name="date" class="form-control" id="date" placeholder="Date">
-											</div>
-											<div class="col-12 col-sm-4">
-												<input type="DateAndTime" name="time" class="form-control" id="time" placeholder="Time">
-											</div>
 										</div>
-									</form>
-								</div>
+									</fieldset>
+									<div class="form-group row">
+										<label for="DateAndTime" class="col-12 col-md-3 col-form-label">Date and Time</label>
+										<div class="col-12 col-sm-4">
+											<input type="DateAndTime" name="date" class="form-control" id="date" placeholder="Date">
+										</div>
+										<div class="col-12 col-sm-4">
+											<input type="DateAndTime" name="time" class="form-control" id="time" placeholder="Time">
+										</div>
+									</div>
+								</form>
+								
 								<section>
 									<div class="btn-group btn-group-toggle" data-toggle="buttons">
 										<label class="btn btn-danger">
@@ -286,79 +286,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="row row-content justify-content-center" id="reserveTable">
-			<div class="col-12 col-sm-8">
-				<div class="card">
-					<h3 class="text-white card-header bg-warning">
-						Reserve a Table
-					</h3>
-
-					<div class="card-body">
-						<form>
-							<fieldset class="form-group">
-								<div class="row">
-									<legend class="col-form-label col-sm-2 pt-0">Number of Guests </legend>
-									<div class="col-sm-10">
-										<div class="form-check-inline form-check">
-											<input class="form-check-input" type="radio" name="guestNumber" id="gridRadios1" value="1">
-											<label class="form-check-label" for="gridRadios1">
-												1
-											</label>
-										</div>
-										<div class="form-check form-check-inline">
-											<input class="form-check-input" type="radio" name="guestNumber" id="gridRadios2" value="2">
-											<label class="form-check-label" for="gridRadios2">
-												2
-											</label>
-										</div>
-										<div class="form-check-inline form-check">
-											<input class="form-check-input" type="radio" name="guestNumber" id="gridRadios3" value="3">
-											<label class="form-check-label" for="gridRadios3">
-												3
-											</label>
-										</div>
-										<div class="form-check-inline form-check">
-											<input class="form-check-input" type="radio" name="guestNumber" id="gridRadios4" value="4">
-											<label class="form-check-label" for="gridRadios4">
-												4
-											</label>
-										</div>
-										<div class="form-check form-check-inline">
-											<input class="form-check-input" type="radio" name="guestNumber" id="gridRadios5" value="5">
-											<label class="form-check-label" for="gridRadios5">
-												5
-											</label>
-										</div>
-										<div class="form-check-inline form-check">
-											<input class="form-check-input" type="radio" name="guestNumber" id="gridRadios6" value="6">
-											<label class="form-check-label" for="gridRadio6">
-												6
-											</label>
-										</div>
-									</div>
-								</div>
-							</fieldset>
-							<div class="form-group row">
-								<label for="DateAndTime" class="col-12 col-md-2 col-form-label">Date and Time</label>
-								<div class="col-12 col-sm-3">
-									<input type="DateAndTime" name="date" class="form-control" id="date" placeholder="Date">
-								</div>
-								<div class="col-12 col-sm-3">
-									<input type="DateAndTime" name="time" class="form-control" id="time" placeholder="Time">
-								</div>
-							</div>
-							<div class="form-group row">
-								<div class="offset-md-2 col-md-10">
-									<button type="submit" class="btn btn-primary">
-										Reserve
-									</button>
-								</div>
-							</div>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
+		
 	</div>
 
 	<footer class="footer">
@@ -403,28 +331,13 @@
 		</div>
 	</footer>
 	<!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+	<!-- build:js JavaScript/main.js -->
 	<script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
 	<script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
 	<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-	<script type="text/javascript">
-		$(document).ready(function(){
-			$('#mycarousel').carousel({interval: 2000});
-			$('#carouselButton').click(function(event) {
-				if ($('#carouselButton').children('span').hasClass('fa-pause')){
-					$('#mycarousel').carousel('pause');	
-					$('#carouselButton').children('span').removeClass('fa-pause');
-					$('#carouselButton').children('span').addClass('fa-play');
-				}
-				else if ($('#carouselButton').children('span').hasClass('fa-play')){
-					$('#mycarousel').carousel('cycle');	
-					$('#carouselButton').children('span').removeClass('fa-play');
-					$('#carouselButton').children('span').addClass('fa-pause');
+	<script type="text/javascript" src="JavaScript/script.js"></script>
+	<!-- endbuild -->
 
-				}
-				/* Act on the event */
-			});
-		});
-	</script>
 </body>
 
 </html>
